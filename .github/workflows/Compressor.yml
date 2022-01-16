@@ -1,4 +1,4 @@
-name: PrivateEncoderV2.0 Workflows 
+name: Shows Workflows 
 
 on:
     push:
@@ -30,7 +30,7 @@ jobs:
          continue-on-error: true
          run: |
            git clone -b main https://${GitHubName}:${{ secrets.GH_TOKEN }}git@github.com:Nova781/mikasa-yair.git
-       - name: Running PrivateEncoderV2.0 Bot 
+       - name: Running Shows Bot 
          timeout-minutes: 350
          continue-on-error: true
          run: |
