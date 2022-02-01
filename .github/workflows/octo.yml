@@ -29,9 +29,9 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/engine
-       - name: Running Octo Bot  
-         timeout-minutes: 350 
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/Telegraph-Uploader-Bot
+       - name: Running Telegraph-Uploader-Bot  
+         timeout-minutes: 300
          continue-on-error: true 
          run: | 
            cd engine
