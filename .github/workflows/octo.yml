@@ -29,12 +29,12 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/Telegraph-Uploader-Bot
-       - name: Running Telegraph-Uploader-Bot  
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/botkaca
+       - name: Running Octo Bot  
          timeout-minutes: 300
          continue-on-error: true 
          run: | 
-           cd engine
+           cd botkaca
            docker build -t compressor . && docker run compressor 
             
        - name: Loop workflow 
