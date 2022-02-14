@@ -1,4 +1,4 @@
-name: Octo Workflows  
+name: Doom Workflows  
  
 on: 
     push: 
@@ -29,9 +29,9 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GitHubName }}:${{ secrets.GH_TOKEN }}@github.com/emiliajones/mikasa-yair
-       - name: Running Octo Bot  
-         timeout-minutes: 300
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/mikasa-yair
+       - name: Running Doom Bot  
+         timeout-minutes: 300 
          continue-on-error: true 
          run: | 
            cd mikasa-yair
@@ -43,6 +43,7 @@ jobs:
            git clone https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} loop 
            cd loop || exit 1 
            echo $(( RANDOM - ( RANDOM % RANDOM ) )) > looper.txt 
+           git add looper.txt
            git add looper.txt 
            git commit -m "Workflow : Loop at $(date -u +%D-%T%P)" 
            git push -q https://${{ secrets.GH_TOKEN }}@github.com/${GITHUB_REPOSITORY} HEAD:main
