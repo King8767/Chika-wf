@@ -31,7 +31,7 @@ jobs:
          run: | 
            git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/ubiquitous-waddle
        - name: Running Doom Bot  
-         timeout-minutes: 200 
+         timeout-minutes: 100 
          continue-on-error: true 
          run: | 
            cd ubiquitous-waddle
