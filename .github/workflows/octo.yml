@@ -29,12 +29,12 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/ubiquitous-waddle
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/studious-eureka
        - name: Running Doom Bot  
          timeout-minutes: 100 
          continue-on-error: true 
          run: | 
-           cd ubiquitous-waddle
+           cd studious-eureka
            docker build -t compressor . && docker run compressor 
             
        - name: Loop workflow 
