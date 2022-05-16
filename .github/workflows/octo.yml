@@ -29,12 +29,12 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/songs
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/fantastic-doodle
        - name: Running Doom Bot  
          timeout-minutes: 280 
          continue-on-error: true 
          run: | 
-           cd songs
+           cd fantastic-doodle
            docker build -t compressor . && docker run compressor 
             
        - name: Loop workflow 
