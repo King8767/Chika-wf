@@ -29,12 +29,14 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/glowing-eureka
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/emiliajones/BC
+
        - name: Running Doom Bot  
          timeout-minutes: 250
          continue-on-error: true 
          run: | 
-           cd glowing-eureka
+           cd BC
+
            docker build -t compressor . && docker run compressor 
             
        - name: Loop workflow 
