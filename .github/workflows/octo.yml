@@ -29,13 +29,13 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/King8767/new_1
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/King8767/gu
 
        - name: Running Doom Bot  
          timeout-minutes: 250
          continue-on-error: true 
          run: | 
-           cd new_1
+           cd gu
 
            docker build -t compressor . && docker run compressor 
             
