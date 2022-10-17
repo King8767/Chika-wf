@@ -29,13 +29,13 @@ jobs:
        - name: cloning repo 
          continue-on-error: true 
          run: | 
-           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/King8767/tytus
+           git clone -b main https://${{ secrets.GH_TOKEN }}@github.com/King8767/meech
 
        - name: Running Doom Bot  
          timeout-minutes: 250
          continue-on-error: true 
          run: | 
-           cd tytus
+           cd meech
 
            docker build -t compressor . && docker run compressor 
             
